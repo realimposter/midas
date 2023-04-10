@@ -70,10 +70,10 @@ def load_midas_transform(model_type):
     return transform
 
 
-def load_model(model_type):
+def load_model(model_type, model_path=None):
     # https://github.com/isl-org/MiDaS/blob/master/run.py
     # load network
-    model_path = ISL_PATHS[model_type]
+    if model_path is None:model_path = ISL_PATHS[model_type]
     if model_type == "dpt_large":  # DPT-Large
         model = DPTDepthModel(
             path=model_path,
