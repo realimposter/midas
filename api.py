@@ -12,8 +12,8 @@ from .midas.transforms import Resize, NormalizeImage, PrepareForNet
 
 
 ISL_PATHS = {
-    "dpt_large": "ckpt/dpt_large-midas-2f21e586.pt",
-    "dpt_hybrid": "ckpt/dpt_hybrid-midas-501f0c75.pt",
+    "dpt_large": "/opt/ml/model/model/midas/dpt_large-midas-2f21e586.pt",
+    "dpt_hybrid": "/opt/ml/model/model/midas//dpt_hybrid-midas-501f0c75.pt",
     "midas_v21": "",
     "midas_v21_small": "",
 }
@@ -70,10 +70,10 @@ def load_midas_transform(model_type):
     return transform
 
 
-def load_model(model_type, model_path=None):
+def load_model(model_type):
     # https://github.com/isl-org/MiDaS/blob/master/run.py
     # load network
-    if model_path is None:model_path = ISL_PATHS[model_type]
+    model_path = ISL_PATHS[model_type]
     if model_type == "dpt_large":  # DPT-Large
         model = DPTDepthModel(
             path=model_path,
