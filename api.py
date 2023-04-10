@@ -13,7 +13,7 @@ from .midas.transforms import Resize, NormalizeImage, PrepareForNet
 
 ISL_PATHS = {
     "dpt_large": "/opt/ml/model/model/midas/dpt_large-midas-2f21e586.pt",
-    "dpt_hybrid": "/opt/ml/model/model/midas//dpt_hybrid-midas-501f0c75.pt",
+    "dpt_hybrid": "/opt/ml/model/model/midas/dpt_hybrid-midas-501f0c75.pt",
     "midas_v21": "",
     "midas_v21_small": "",
 }
